@@ -18,6 +18,6 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }} # Set up this secret in your GitHub repository settings
           key: ${{ secrets.EC2_PRIVATE_KEY }} # Set up this secret in your GitHub repository settings
           script: |
-            cd /home/ubuntu/express-cicd-demo
+            cd /home/ubuntu/express-devops-demo
             git pull origin main
             pm2 restart backendapi
