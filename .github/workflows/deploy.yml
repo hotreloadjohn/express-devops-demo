@@ -1,0 +1,23 @@
+name: NodeJS Express Server Deployment
+
+on:
+  push:
+    branches:
+      - main # Change this to your main branch name, if it's different
+
+jobs:
+  deploy:
+    name: Deploy to AWS EC2
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }} # Set up this secret in your GitHub repository settings
+          username: ${{ secrets.EC2_USERNAME }} # Set up this secret in your GitHub repository settings
+          key: ${{ secrets.EC2_PRIVATE_KEY }} # Set up this secret in your GitHub repository settings
+          script: |
+            cd /home/ubuntu/express-cicd-demo
+            git pull origin main
+            pm2 restart backendapi
