@@ -7,13 +7,22 @@ app.get("/", (req, res) => {
 
 // GET product api
 app.get("/api/products", (req, res) => {
+  // fake electronic products
   const products = [
-    { id: 1, name: "product 1" },
-    { id: 2, name: "product 2" },
-    { id: 3, name: "product 3" },
-    { id: 4, name: "product 4" },
-    { id: 5, name: "product 5" },
+    {
+      id: 1,
+      name: "Laptop",
+      description: "This is laptop",
+      price: 1000,
+    },
+    {
+      id: 2,
+      name: "Mobile",
+      description: "This is mobile",
+      price: 500,
+    },
   ];
+
   res.json(products);
 });
 
