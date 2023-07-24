@@ -21,6 +21,12 @@ app.get("/api/products", (req, res) => {
       description: "This is mobile",
       price: 500,
     },
+    {
+      id: 3,
+      name: "Mobile",
+      description: "This is Mr JI mobile",
+      price: 500,
+    },
   ];
 
   res.json(products);
